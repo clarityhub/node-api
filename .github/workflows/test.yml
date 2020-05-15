@@ -26,4 +26,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm i
     - run: npm run build --if-present
-    - run: npm run test:integration
+    - env:
+        ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
+        ACCESS_KEY_SECRET: ${{ secrets.ACCESS_KEY_SECRET }}
+      run: npm run test:integration
