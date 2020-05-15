@@ -3,6 +3,7 @@ const axios = require('axios');
 
 const nlp = require('./endpoints/nlp');
 const models = require('./endpoints/models');
+const classLabel = require('./classes/labels');
 const classModel = require('./classes/models');
 
 /**
@@ -39,5 +40,6 @@ module.exports = (config) => {
     return {
         api,
         models: classModel(api),
+        labels: classLabel(api)
     };
 }

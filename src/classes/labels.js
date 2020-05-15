@@ -19,7 +19,7 @@ class Label {
 
 module.exports = (api) => {
     return {
-        getAll(modelId) {
+        async getAll(modelId) {
             if (!modelId) {
                 throw new Error('Clarity Hub: "modelId" is a required');
             }
@@ -31,16 +31,16 @@ module.exports = (api) => {
 
             return labels;
         },
-        get(modelId, labelId) {
+        async get(modelId, labelId) {
             if (!modelId) {
                 throw new Error('Clarity Hub: "modelId" is a required');
             }
 
             if (!labelId) {
-                throw new Error('Clarity Hub: "modelId" is a required');
+                throw new Error('Clarity Hub: "labelId" is a required');
             }
 
-            const response = await api.models.labels.getAll(modelId)
+            const response = await api.models.labels.get(modelId, labelId)
             const item = response.data.item;
 
             return new Label(modelId, item.labelId, item, api);
