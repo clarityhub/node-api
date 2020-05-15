@@ -2,13 +2,15 @@ const assert = require('assert');
 const axios = require('axios');
 
 const nlp = require('./endpoints/nlp');
+const models = require('./endpoints/models');
+const classModel = require('./classes/models');
 
 /**
  * @param config {accessKeyId, accessKeySecret, baseUrl}
  */
 module.exports = (config) => {
-    assert(config.accessKeyId);
-    assert(config.accessKeySecret);
+    assert(!!config.accessKeyId);
+    assert(!!config.accessKeySecret);
 
     const auth = {
         username: config.accessKeyId,
@@ -29,11 +31,13 @@ module.exports = (config) => {
         });
     };
 
+    const api = {
+        nlp: nlp(buildRequest),
+        models: models(buildRequest),
+    };
+
     return {
-        api: {
-            nlp: nlp(buildRequest),
-            models: models(buildRequest),
-        },
-        
+        api,
+        models: classModel(api),
     };
 }

@@ -1,5 +1,5 @@
 describe('api.nlp', () => {
-    const clarityhub = require('../../src')({
+    const clarityhub = require('../../../src')({
         accessKeyId: process.env.ACCESS_KEY_ID,
         accessKeySecret: process.env.ACCESS_KEY_SECRET,
     });

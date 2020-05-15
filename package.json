@@ -1,14 +1,14 @@
 {
   "name": "@clarityhub/node-api",
-  "version": "1.0.0",
-  "description": "Clarity Hub Node API",
+  "version": "0.0.1",
+  "description": "Clarity Hub Node API – Use NLP and USE quickly in your Node application",
   "main": "src/index.js",
   "scripts": {
     "test:integration": "jest ./tests/integration --runInBand --testTimeout=20000"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/clarityhub/clarityhub-node-api.git"
+    "url": "git+https://github.com/clarityhub/node-api.git"
   },
   "keywords": [
     "node",
@@ -20,9 +20,12 @@
   "author": "Clarity Hub <opensource@clarityhub.io>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/clarityhub/clarityhub-node-api/issues"
+    "url": "https://github.com/clarityhub/node-api/issues"
   },
-  "homepage": "https://github.com/clarityhub/clarityhub-node-api#readme",
+  "homepage": "https://github.com/clarityhub/node-api#readme",
+  "peerDependencies": {
+    "axios": "^0.19.2"
+  },
   "devDependencies": {
     "axios": "^0.19.2",
     "jest": "^26.0.1"
