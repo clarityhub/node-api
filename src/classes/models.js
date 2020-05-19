@@ -35,8 +35,10 @@ class Model {
         return labels;
     }
 
-    predictLabel(utterances) {
-        return this._api.models.predict.labels(this.modelId, utterances);
+    async predictLabel(utterances) {
+        const response = await this._api.models.predict.labels(this.modelId, utterances);
+
+        return response.data.items;
     }
 
     async predictSimilar(utterances) {
