@@ -25,10 +25,10 @@
   },
   "homepage": "https://github.com/clarityhub/node-api#readme",
   "peerDependencies": {
-    "axios": "^0.19.2"
+    "axios": "^0.21.1"
   },
   "devDependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "jest": "^26.0.1"
   }
 }
